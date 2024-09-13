@@ -55,7 +55,7 @@ from scraper import *
    * Call the scraper functions with the necessary parameters, storing the results into variables.
    * Use help() to get more information about the scraper functions. e.g. `help(extract_listings)`
 
-There is an optional `clean.py` file which can be used to remove unnecessary columns from the raw JSON file (works for the JSearch API only).
+There is an optional `clean.py` file which can be used to re-order and remove unnecessary columns from the raw JSON file (works for the JSearch API only).
 
 ## Sample Output
 * [Cleaned Data](https://github.com/michaelsmith01984/Web-Scraper/blob/main/cleaned_job_listings.csv)
