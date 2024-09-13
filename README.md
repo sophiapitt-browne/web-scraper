@@ -1,4 +1,4 @@
-# Entry Level Cybersecurity Jobs Web Scraper
+# Cybersecurity Jobs Web Scraper using RapidAPI and Python
 
 This project contains Python code for extracting job listings from a RapidAPI API and converting the data into a Pandas DataFrame and CSV file.
 
