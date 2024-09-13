@@ -58,7 +58,8 @@ from scraper import *
 There is an optional `clean.py` file which can be used to remove unnecessary columns from the raw JSON file (works for the JSearch API only).
 
 ## Sample Output
-[CSV Data](https://github.com/michaelsmith01984/Web-Scraper/blob/main/cleaned_job_listings.csv)
+* [Cleaned Data](https://github.com/michaelsmith01984/Web-Scraper/blob/main/cleaned_job_listings.csv)
+* [Raw Data](https://github.com/michaelsmith01984/Web-Scraper/blob/main/job_listings.csv)
 
 ## Examples
 
