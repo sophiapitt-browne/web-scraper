@@ -114,7 +114,7 @@ def dataframe_to_csv(df, filename="jobs.csv"):
     print(f"Error saving DataFrame to CSV: {e}")
     return None
 
-  
+
 def clean_dataframe(df):
   """
   Cleans the input DataFrame by renaming columns and dropping unnecessary ones.
@@ -132,6 +132,7 @@ def clean_dataframe(df):
   if df is None:
     return None
 
+
   # Define a list of columns to keep
   keep_columns = ["job_title",
       "job_employment_type",
@@ -141,7 +142,9 @@ def clean_dataframe(df):
       "job_posted_at_datetime_utc",
       "employer_name",
       "employer_website",
-      "job_country",      
+      "job_country", 
+      "job_city",
+      "job_state",      
       "job_is_remote",
       "job_offer_expiration_datetime_utc",
       "job_required_skills",
@@ -157,8 +160,8 @@ def clean_dataframe(df):
   columns_to_drop = [col for col in df.columns if col not in keep_columns]
   df = df.drop(columns=columns_to_drop,errors='ignore')
 
-  # Rename columns
-  df = df.rename(columns={
+  # Rename columns list
+  new_columns = {
       "job_title": "job_title",
       "job_employment_type": "employment_type",
       "job_description": "description",
@@ -170,7 +173,9 @@ def clean_dataframe(df):
       "job_highlights.Benefits": "benefits",
       "job_min_salary": "minimum_salary",
       "job_max_salary": "maximum_salary",   
-      "job_country": "location",   
+      "job_country": "country", 
+      "job_city": "city",
+      "job_state": "state",   
       "job_is_remote": "is_remote",
       "job_apply_link": "apply_link", 
       "job_publisher": "job_publisher",
@@ -178,6 +183,12 @@ def clean_dataframe(df):
       "job_offer_expiration_datetime_utc": "date_expires",
       "employer_name": "company_name",
       "employer_website": "company_website",
-  })
+  }
+
+  # Re-order columns
+  df = df.reindex(columns=list(new_columns.keys()))
+
+  # Rename columns
+  df = df.rename(columns=new_columns)
 
   return df

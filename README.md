@@ -33,7 +33,7 @@ The code defines three main functions stored in the scraper.py file:
 
 * `dataframe_to_csv()`: Converts a Pandas DataFrame to a CSV file.
 
-* `clean_dataframe`: Cleans a DataFrame by renaming columns and dropping unnecessary ones (based on data from the Jsearch API).
+* `clean_dataframe`: Cleans a DataFrame by re-ordering and renaming columns and dropping unnecessary ones (based on data from the Jsearch API).
 
 These functions can be used together for the complete process of extracting the json data and converting to a CSV file or used separately to reduce the number of API requests or for further data analysis and cleaning purposes.
 
@@ -56,6 +56,9 @@ from scraper import *
    * Use help() to get more information about the scraper functions. e.g. `help(extract_listings)`
 
 There is an optional `clean.py` file which can be used to remove unnecessary columns from the raw JSON file (works for the JSearch API only).
+
+## Sample Output
+[CSV Data](https://github.com/michaelsmith01984/Web-Scraper/blob/main/cleaned_job_listings.csv)
 
 ## Examples
 
@@ -107,7 +110,7 @@ if __name__ == "__main__":
 
 ### Example 2. Using an additional function to clean listings from the JSearch API (clean.py)
 
-This example demonstrates extracting job listings from the downloaded JSON file "job_listings.json", dropping unnecessary columns and renaming columns before converting to a CSV. 
+This example demonstrates extracting job listings from the downloaded JSON file "job_listings.json", dropping unnecessary columns, re-ordering and renaming columns before converting to a CSV. 
 > **NOTE**  
 > Note that the `clean.py` script assumes that there is an existing JSON file (to reduce the number of API requests). 
 
