@@ -24,7 +24,7 @@ if __name__ == "__main__":
   file_path = extract_listings(url, query, headers, filename=json_name)
 
   # Load the JSON data into a DataFrame
-  df = json_to_dataframe(json_name)
+  df = json_to_dataframe(file_path)
 
   # Save the DataFrame to a CSV file
   if df is not None:
