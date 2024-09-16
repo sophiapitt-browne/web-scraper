@@ -90,7 +90,7 @@ if __name__ == "__main__":
   }
 
   headers = {
-      "x-rapidapi-key": "803f7f4fd3msh5463766addfc2cbp13616ejsn2c2c3b21871b",
+      "x-rapidapi-key": "insert-your-api-key",
 	    "x-rapidapi-host": "jsearch.p.rapidapi.com"
   }
   json_name = "job_listings.json"
@@ -132,7 +132,7 @@ if __name__ == "__main__":
   }
 
   headers = {
-      "x-rapidapi-key": "803f7f4fd3msh5463766addfc2cbp13616ejsn2c2c3b21871b",
+      "x-rapidapi-key": "insert-your-api-key",
 	    "x-rapidapi-host": "jsearch.p.rapidapi.com"
   }
   json_name = "job_listings.json"
