@@ -198,7 +198,7 @@ def clean_dataframe(df):
   # Clean the relevant columns
   for column in columns_to_clean:
         df[column] = df[column].astype(str)
-        df[column] = df[column].str.replace(r'nan', '')
+        df[column] = df[column].replace('nan', '') # Replace 'nan' only when it is the entire cell value
         df[column] = df[column].str.replace(r'\n', ' ').str.replace(r'\t', ' ')
         df[column] = df[column].str.replace(r"[^\w\s./_,()|:;-]", "", regex=True)  # Keep alphanumeric, space, common punctuation
         df[column] = df[column].str.strip()
