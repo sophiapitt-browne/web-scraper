@@ -14,21 +14,23 @@ if __name__ == "__main__":
   }
 
   headers = {
-    "x-rapidapi-key": "insert-api-key-here",
+    "x-rapidapi-key": "803f7f4fd3msh5463766addfc2cbp13616ejsn2c2c3b21871b",
 	"x-rapidapi-host": "jsearch.p.rapidapi.com"
   }
   json_name = "job_listings.json"
-  csv_name = "cleaned_job_listings.csv"
+  csv_name = "juliett_cleaned_job_listings.csv"
 
   # Extract and Download the JSON file
   #file_path = extract_listings(url, query, headers, filename=json_name)
 
   # Load the JSON data into a DataFrame
   df = json_to_dataframe(json_name)
+  #df.info()
 
   if df is not None:
   # Clean the DataFrame
     df_cleaned = clean_dataframe(df)
+    #df_cleaned.info()
   # Save the DataFrame to a CSV file
     dataframe_to_csv(df_cleaned, csv_name)
   else:

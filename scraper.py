@@ -2,6 +2,7 @@ import requests
 import os
 import pandas as pd
 import json
+import re
 
 # Extract and Download Job Listings
 def extract_listings(url, query, headers, filename="job_listings.json"):
@@ -190,5 +191,16 @@ def clean_dataframe(df):
 
   # Rename columns
   df = df.rename(columns=new_columns)
+
+  # List of columns to clean
+  columns_to_clean = ['job_title', 'description', 'required_skills', 'qualifications', 'responsibilities', 'benefits']
+
+  # Clean the relevant columns
+  for column in columns_to_clean:
+        df[column] = df[column].astype(str)
+        df[column] = df[column].str.replace(r'nan', '')
+        df[column] = df[column].str.replace(r'\n', ' ').str.replace(r'\t', ' ')
+        df[column] = df[column].str.replace(r"[^\w\s./_,()|:;-]", "", regex=True)  # Keep alphanumeric, space, common punctuation
+        df[column] = df[column].str.strip()
 
   return df
